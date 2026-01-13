@@ -34,7 +34,7 @@ jobs:
             echo ">>> Pull latest changes"
             git fetch origin develop
             git reset --hard origin/develop
-
+ 
             echo ">>> Install dependencies"
             sudo npm install --production
 

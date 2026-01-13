@@ -3,7 +3,7 @@ name: Deploy to EC2 (develop)
 on:
 push:
 branches:
--develop # developブランチにpushされたとき実行
+- develop # developブランチにpushされたとき実行
 
 jobs:
 deploy:
@@ -12,11 +12,11 @@ environment: development
 
 steps:
 # 1 リポジトリをチェックアウト
--name: Checkout repository
+- name: Checkout repository
 uses: actions/checkout@v4
 
 # 2 EC2へSSH接続してデプロイ
--name: Deploy to EC2 via SSH
+- name: Deploy to EC2 via SSH
 uses: appleboy/ssh-action@v1.2.0
 with:
 host: ${{ secrets.EC2_HOST }}
